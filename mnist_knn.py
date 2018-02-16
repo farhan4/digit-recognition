@@ -25,8 +25,8 @@ ret,y_pred,neighbours,dist = knn.findNearest(X_test,k=3)
 #accuracy_score(y_test, y_pred)*100
 
 imageId = np.arange(1,28001)
-
-sub = pd.DataFrame({'ImageId': imageId , 'Label': y_pred})
+p = y_pred.tolist()
+sub = pd.DataFrame({'ImageId': imageId , 'Label': p})
 
 sub.to_csv('submission.csv', index=False)
 
